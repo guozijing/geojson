@@ -11,7 +11,7 @@ func file_get_contents(path string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return ioutil.ReadALL(f)
+	return ioutil.ReadAll(f)
 }
 
 func GetPoints(path string) ([]StructPoint, error) {
