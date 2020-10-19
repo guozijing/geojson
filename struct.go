@@ -11,7 +11,7 @@ type StructFeature struct {
 }
 
 type StructGeometry struct {
-	Coordinates []*float64 `json:"coordinates"`
+	Coordinates []float64 `json:"coordinates"`
 }
 
 type StructPoint struct {
