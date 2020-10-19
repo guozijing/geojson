@@ -14,12 +14,12 @@ func file_get_contents(path string) ([]byte, error) {
 	return ioutil.ReadAll(f)
 }
 
-func GetPoints(path string) ([]StructPoint, error) {
+func GetPoints(path string) (map[int]StructPoint, error) {
 	var content []byte
 	var err error
 	var c StructGeo
-	var res []StructPoint
-
+	res := make(map[int]StructPoint)
+	
 	content, err = file_get_contents(path)
 	if err != nil {
 		return nil, err
@@ -29,7 +29,7 @@ func GetPoints(path string) ([]StructPoint, error) {
 		return nil, err
 	}
 	for _, points := range c.Features {
-		res = append(res, StructPoint{lng: points.Geometry.Coordinates[0], lat: points.Geometry.Coordinates[1]})
+		res[points.Properties.Index] = StructPoint{lng: points.Geometry.Coordinates[0], lat: points.Geometry.Coordinates[1]}
 	}
 	return res, nil
 }
