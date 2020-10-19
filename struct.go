@@ -7,7 +7,12 @@ type StructGeo struct {
 
 type StructFeature struct {
 	Type string `json:"type"`
+	Properties StructProperties `json:"properties"`
 	Geometry StructGeometry `json:"geometry"`
+}
+
+type StructProperties struct {
+	Index int `json:"index"`
 }
 
 type StructGeometry struct {
