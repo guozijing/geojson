@@ -29,7 +29,7 @@ func GetPoints(path string) (map[int]StructPoint, error) {
 		return nil, err
 	}
 	for _, points := range c.Features {
-		res[points.Properties.Index] = StructPoint{lng: points.Geometry.Coordinates[0], lat: points.Geometry.Coordinates[1]}
+		res[points.Properties.Index] = StructPoint{Lng: points.Geometry.Coordinates[0], Lat: points.Geometry.Coordinates[1]}
 	}
 	return res, nil
 }
