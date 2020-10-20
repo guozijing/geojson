@@ -20,6 +20,6 @@ type StructGeometry struct {
 }
 
 type StructPoint struct {
-	lat float64
-	lng float64
+	Lat float64
+	Lng float64
 }
